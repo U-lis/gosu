@@ -54,10 +54,10 @@ func LoadGeneralSkin() {
 	}
 	{
 		s := draws.NewSprite("skin/box-mask.png")
-		scaleW := ChartInfoBoxWidth / s.W()
-		scaleH := ChartInfoBoxHeight / s.H()
+		scaleW := ChartItemWidth / s.W()
+		scaleH := ChartItemHeight / s.H()
 		s.SetScaleXY(scaleW, scaleH, ebiten.FilterLinear)
-		s.SetPosition(screenSizeX+chartInfoBoxshrink, screenSizeY/2, draws.OriginRightMiddle)
+		s.SetPosition(screenSizeX+chartItemshrink, screenSizeY/2, draws.OriginRightMiddle)
 		ChartItemBoxSprite = s
 	}
 	// Todo: ChartLevelBoxSprite

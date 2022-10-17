@@ -125,9 +125,9 @@ func (s SceneSelect) Draw(screen *ebiten.Image) {
 		sprite := ChartItemBoxSprite
 		var tx float64
 		if i == cursor {
-			tx -= chartInfoBoxshrink
+			tx -= chartItemshrink
 		}
-		ty := float64(i-cursor) * ChartInfoBoxHeight
+		ty := float64(i-cursor) * ChartItemHeight
 		sprite.Move(tx, ty)
 		sprite.Draw(screen, nil)
 	}
@@ -139,12 +139,12 @@ func (s SceneSelect) Draw(screen *ebiten.Image) {
 	for i, info := range viewport {
 		sprite := ChartItemBoxSprite
 		t := info.Text()
-		offset := float64(i-cursor) * ChartInfoBoxHeight
+		offset := float64(i-cursor) * ChartItemHeight
 		// rect := text.BoundString(draws.Face24, t)
 		x := int(sprite.X()-sprite.W()) + dx   //+ rect.Dx()
 		y := int(sprite.Y()-sprite.H()/2) + dy //+ rect.Dy()
 		if i == cursor {
-			x -= int(chartInfoBoxshrink)
+			x -= int(chartItemshrink)
 		}
 		text.Draw(screen, t, Face12, x, y+int(offset), color.Black)
 		// text.Draw(screen, t, basicfont.Face7x13, x, y+int(offset), color.Black)

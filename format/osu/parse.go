@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"fmt"
 	"image/color"
+	"io"
 	"os"
 	"strconv"
 	"strings"
@@ -348,6 +349,7 @@ func newRGB(s string) color.RGBA {
 }
 
 const (
+	modeError    = -1
 	ModeStandard = iota
 	ModeTaiko
 	ModeCatch
@@ -356,14 +358,18 @@ const (
 
 const ModeDefault = ModeStandard
 
+// Todo: Mode -> ModeByPath
 func Mode(path string) (int, int) {
-	const modeError = -1
-
 	f, err := os.Open(path)
 	if err != nil {
 		return modeError, 0
 	}
 	defer f.Close()
+	return ModeByFile(f)
+}
+
+// Todo: ModeByFile -> Mode
+func ModeByFile(f io.Reader) (int, int) {
 	var (
 		mode     int
 		keyCount int

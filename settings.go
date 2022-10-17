@@ -11,12 +11,12 @@ var (
 	// TPS affects only on Update(), not on Draw().
 	TPS int = 1000 // TPS should be 1000 or greater.
 
-	CursorScale        float64 = 0.1
-	ChartInfoBoxWidth  float64 = 450
-	ChartInfoBoxHeight float64 = 50
-	ChartInfoBoxShrink float64 = 0.15
-	chartInfoBoxshrink float64 = ChartInfoBoxWidth * ChartInfoBoxShrink
-	chartItemBoxCount  int     = int(screenSizeY/ChartInfoBoxHeight) + 2 // Gives some margin.
+	CursorScale       float64 = 0.1
+	ChartItemWidth    float64 = 450
+	ChartItemHeight   float64 = 50
+	ChartItemShrink   float64 = 0.15
+	chartItemshrink   float64 = ChartItemWidth * ChartItemShrink
+	chartItemBoxCount int     = int(screenSizeY/ChartItemHeight) + 2 // Gives some margin.
 
 	ScoreScale    float64 = 0.65
 	ScoreDigitGap float64 = 0
